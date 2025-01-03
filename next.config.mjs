@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
+    // output: 'export',
 
-    basePath: '/coooper-raposo-website',
-    assetPrefix: '/coooper-raposo-website/',
+    // basePath: '/coooper-raposo-website',
+    // assetPrefix: '/coooper-raposo-website/',
     reactStrictMode: true,
 };
 

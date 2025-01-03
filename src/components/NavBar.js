@@ -8,7 +8,7 @@ const NavBar = ({ routeObject, externalRoutes, compSetter }) => {
   }
 
   return (
-    <div className="navbar fixed w-[30%] h-full z-10 py-24 pl-32 shadow-xl">
+    <div className="navbar fixed w-[20%] h-full z-100 py-24 pl-32 shadow-xl">
       <h2 className="cooper-raposo-navbar-name mb-5">Cooper Raposo</h2>
 
       {Object.entries(routeObject).map(([parent, children]) => (
