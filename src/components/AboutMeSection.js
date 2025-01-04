@@ -3,7 +3,9 @@ import React from 'react'
 const AboutMeSection = ({prop1}) => {
     console.log(prop1);
   return (
-    <div>AboutMeSection</div>
+    <div className='w-full '>
+      About Me Section
+    </div>
   )
 }
 

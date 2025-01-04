@@ -40,16 +40,25 @@ const index = ({renderedComp}) => {
             image_name : "horse_jump.jpg"
         },
     }
+    
+    const renderedCompToComp = {
+        'About Me' : <AboutMeSection prop1={"test1"} />,
+        'Resume/CV' : <ResumeSection />,
+        'Project 1' : <GenericProjectSection {...(ProjectProps['Project 1'])} />,
+        'Project 2' : <GenericProjectSection {...(ProjectProps['Project 2'])} />,
+        'Project 3' : <GenericProjectSection {...(ProjectProps['Project 3'])} />,
+        
+
+    }
 
   return (
-    <div className='page-content absolute p-4 flex-0 w-[70%] left-[30%]'>
-        {renderedComp === 'About Me' && <AboutMeSection prop1={"test1"} />}
+    <div className='page-content p-10 flex-0 w-[100%]  flex flex-col justify-start items-center overflow-y-scroll border border-black'>
 
-        {/** RESUME / CV */}
-        {renderedComp === 'Resume/CV' &&  <ResumeSection />}
-
-        {/* ALL ARCHITECUTRE PROJECTS */}
-        {(renderedComp === 'Project 1' || renderedComp === 'Project 2' || renderedComp === 'Project 3') &&  <GenericProjectSection {...(ProjectProps[renderedComp])} />}
+        {/** DYNAMICALLY RENDER THE ACTUAL PAGE CONTENT */}
+        
+        {
+            renderedCompToComp[renderedComp]
+        }
 
         
     </div>
