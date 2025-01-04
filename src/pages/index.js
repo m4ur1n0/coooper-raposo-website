@@ -52,7 +52,7 @@ const index = ({renderedComp}) => {
     }
 
   return (
-    <div className='page-content p-10 flex-0 w-[100%]  flex flex-col justify-start items-center overflow-y-scroll border border-black'>
+    <div className='page-content p-10 flex-0 w-[100%]  flex flex-col justify-start items-center overflow-y-scroll '>
 
         {/** DYNAMICALLY RENDER THE ACTUAL PAGE CONTENT */}
         
