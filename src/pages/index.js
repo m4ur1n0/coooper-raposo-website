@@ -1,4 +1,5 @@
 import AboutMeSection from '@/components/AboutMeSection'
+import Footer from '@/components/Footer'
 import GenericProjectSection from '@/components/GenericProjectSection'
 import ResumeSection from '@/components/ResumeSection'
 import Tegner from '@/components/Tegner'
@@ -45,16 +46,16 @@ const index = ({renderedComp}) => {
     const renderedCompToComp = {
         'About Me' : <AboutMeSection prop1={"test1"} />,
         'Resume/CV' : <ResumeSection />,
-        'Project 1' : <GenericProjectSection {...(ProjectProps['Project 1'])} />,
-        'Project 2' : <GenericProjectSection {...(ProjectProps['Project 2'])} />,
-        'Project 3' : <GenericProjectSection {...(ProjectProps['Project 3'])} />,
+        // 'Project 1' : <GenericProjectSection {...(ProjectProps['Project 1'])} />,
+        // 'Project 2' : <GenericProjectSection {...(ProjectProps['Project 2'])} />,
+        // 'Project 3' : <GenericProjectSection {...(ProjectProps['Project 3'])} />,
         'Tegner Museum' : <Tegner />
         
 
     }
 
   return (
-    <div className='page-content p-10 flex-0 w-[100%]  flex flex-col justify-start items-center overflow-y-scroll '>
+    <div className='page-content px-10 flex-0 w-[100%]  flex flex-col justify-start items-center overflow-y-scroll '>
 
         {/** DYNAMICALLY RENDER THE ACTUAL PAGE CONTENT */}
         
@@ -62,6 +63,8 @@ const index = ({renderedComp}) => {
             renderedCompToComp[renderedComp] || <div className='w-full h-full flex flex-col items-center justify-center'>Coming Soon!</div>
         }
 
+
+        {/* <Footer /> */}
         
     </div>
   )

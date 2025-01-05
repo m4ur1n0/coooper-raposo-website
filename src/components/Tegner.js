@@ -5,7 +5,7 @@ import ProjectParagraph from './ProjectParagraph'
 
 const Tegner = () => {
   return (
-    <div className='w-full flex flex-col justify-start'>
+    <div className='w-full flex flex-col justify-start items-center mb-24 pt-[105px]'>
         <ProjectImage image_name={'tegner1.png'} />
 
         <ProjectTitle date={2023}>

@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #f1f1f1;
+  /* --background: #f1f1f1; */
+  --background : #ffffff;
   --text: #171717;
 }
-
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     --background: #171717;
     --foreground: #f1f1f1;
     --navbar-font : 'Helvetica'
   }
-}
+} */
 
 
 body {

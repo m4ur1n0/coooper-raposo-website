@@ -10,10 +10,10 @@ export default function MyApp({ Component, pageProps }) {
 
     const navbar_routes = {
         'About' : ['About Me', 'Resume/CV'],
-        'Architecture' : ['Tegner Museum', 'Project 1', 'Project 2', 'Project 3'],
-        'Digital' : ['Title 1'],
-        'Objects' : ['Object 1', 'Object 2', 'Object 3', 'Object 4'],
-        'Press and Publications' : ['News Story 1', 'Interview 1', 'Interview 2'],
+        'Architecture' : ['Tegner Museum', 'Apex Design Build', 'Indre By Shipyard', 'CFPA Threshold Design Build', 'Tumbling House'],
+        'Digital' : [],
+        'Objects' : [],
+        'Press and Publications' : [],
         'Work Experience' : []
     };
 
