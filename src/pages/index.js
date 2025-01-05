@@ -57,7 +57,7 @@ const index = ({renderedComp}) => {
         {/** DYNAMICALLY RENDER THE ACTUAL PAGE CONTENT */}
         
         {
-            renderedCompToComp[renderedComp]
+            renderedCompToComp[renderedComp] || <div className='w-full h-full flex flex-col items-center justify-center'>Coming Soon!</div>
         }
 
         

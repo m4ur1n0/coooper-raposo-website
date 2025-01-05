@@ -1,10 +1,46 @@
 import React, { useState } from 'react';
 
 const NavBar = ({ routeObject, externalRoutes, compSetter }) => {
-  const [selected, setSelected] = useState(Object.keys(routeObject)[0]);
+  const [selected, setSelectedRoute] = useState(Object.keys(routeObject)[0]);
+  const [menuIsOpen, setMenuOpen] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+
+  const setSelected = (id) => {
+    setSelectedRoute(id);
+    compSetter(id);
+  }
 
   const setComp = (component) => {
     compSetter(component);
+  }
+
+  const handleOpenMenu = () => {
+    if (openSubMenu === null) {
+      setMenuOpen(!menuIsOpen);
+
+    }
+
+    setOpenSubMenu(null);
+
+
+  }
+
+  const handleParentMobileNavBarClick = (parentId) => {
+    if(routeObject[parentId].length === 0) {
+      setSelected(parentId);
+    }
+
+    setOpenSubMenu(parentId);
+    setMenuOpen(false);
+
+  }
+
+  const handleChildMobileNavBarClick = (childId) => {
+    setSelected(childId);
+
+    setMenuOpen(false);
+    setOpenSubMenu(null);
+
   }
 
   return (
@@ -15,13 +51,53 @@ const NavBar = ({ routeObject, externalRoutes, compSetter }) => {
         <h2 className="cooper-raposo-navbar-name thin-font md:-ml-[1px] md:mb-5">Cooper Raposo</h2>
 
         <div className='mobile-navbar md:hidden mr-10'>
-          <p>{selected}</p>
+
+          <div className='mobile-navbar-menu-flex-wrapper flex flex-col items-center'>
+            <div className='navbar-page-select-activator p-4            cursor-pointer' onClick={handleOpenMenu}>
+              <p>{selected}</p>
+            </div>
+
+            {(menuIsOpen) && 
+              <div className='absolute menu-page-parents-mobile p-4 mt-10 right-0 flex flex-col mr-12'>
+
+                {Object.entries(routeObject).map(([parent, children], idx) => (
+                  parent!==selected && <div 
+                      className='mobile-parent-navbar-item cursor-pointer border' 
+                      key={idx}
+                      onClick={() => handleParentMobileNavBarClick(parent)}
+                  >
+                    <p className='text-bold'>{parent}</p>
+
+                  </div>
+                ))}
+                  
+              </div>
+            }
+
+            {(openSubMenu !== null) &&
+              <div className='absolute menu-page-children-mobile p-4 mt-10 right-0 flex flex-col mr-12'>
+                {routeObject[openSubMenu].map((entry, index) => (
+                  entry!==selected && <div
+                    className='mobile-parent-navbar-item cursor-pointer border'
+                    key={index}
+                    onClick={()=>handleChildMobileNavBarClick(entry)}>
+                      <p className='text-bold'>{entry}</p>
+                  </div>
+                ))}
+
+              </div>
+            }
+
+          </div>
+
+
+
         </div>
 
 
         <div className='desktop-navbar hidden md:block'>
-          {Object.entries(routeObject).map(([parent, children]) => (
-            <div key={parent} className="parent-navbar-link-container flex flex-col">
+          {Object.entries(routeObject).map(([parent, children], idx) => (
+            <div key={idx} className="parent-navbar-link-container flex flex-col">
               {/* Parent Route */}
               <p
                 className={`parent-navbar-item cursor-pointer hover:text-gray-600  no-select`}
