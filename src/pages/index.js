@@ -1,6 +1,7 @@
 import AboutMeSection from '@/components/AboutMeSection'
 import GenericProjectSection from '@/components/GenericProjectSection'
 import ResumeSection from '@/components/ResumeSection'
+import Tegner from '@/components/Tegner'
 import React, { useEffect } from 'react'
 
 const index = ({renderedComp}) => {
@@ -47,6 +48,7 @@ const index = ({renderedComp}) => {
         'Project 1' : <GenericProjectSection {...(ProjectProps['Project 1'])} />,
         'Project 2' : <GenericProjectSection {...(ProjectProps['Project 2'])} />,
         'Project 3' : <GenericProjectSection {...(ProjectProps['Project 3'])} />,
+        'Tegner Museum' : <Tegner />
         
 
     }
