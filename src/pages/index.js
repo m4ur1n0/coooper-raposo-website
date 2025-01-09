@@ -1,6 +1,7 @@
 import AboutMeSection from '@/components/AboutMeSection'
 import Footer from '@/components/Footer'
 import GenericProjectSection from '@/components/GenericProjectSection'
+import PhotoSlideShow from '@/components/PhotoSlideShow'
 import ResumeSection from '@/components/ResumeSection'
 import Tegner from '@/components/Tegner'
 import React, { useEffect } from 'react'
@@ -44,7 +45,8 @@ const index = ({renderedComp}) => {
     }
     
     const renderedCompToComp = {
-        'About Me' : <AboutMeSection prop1={"test1"} />,
+        // 'About Me' : <AboutMeSection prop1={"test1"} />,
+        'About Me' : <PhotoSlideShow />,
         'Resume/CV' : <ResumeSection />,
         // 'Project 1' : <GenericProjectSection {...(ProjectProps['Project 1'])} />,
         // 'Project 2' : <GenericProjectSection {...(ProjectProps['Project 2'])} />,
