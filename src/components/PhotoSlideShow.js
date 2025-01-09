@@ -24,21 +24,21 @@ const PhotoSlideShow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 2500);
+    }, 4000);
 
     return () => clearInterval(interval);  // Cleanup on unmount
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden flex flex-col justify-center items-center">
+    <div className="relative w-full h-full overflow-hidden flex flex-col justify-center items-center mr-24">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute  flex justify-center items-center transition-opacity duration-300 ease-in w-[80%]  ${
+          className={`absolute  flex justify-center items-center transition-opacity duration-500 ease-in w-[80%]  ${
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="px-4">
+          <div className="px-32">
             <img src={`/images/${slide.src}`} />
           </div>
         </div>
