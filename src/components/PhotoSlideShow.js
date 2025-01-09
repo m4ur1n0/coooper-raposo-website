@@ -30,7 +30,7 @@ const PhotoSlideShow = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden flex flex-col justify-center items-center mr-24">
+    <div className="relative w-full h-full overflow-hidden flex flex-col justify-center items-center">
       {slides.map((slide, index) => (
         <div
           key={slide.id}

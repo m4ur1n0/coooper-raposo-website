@@ -4,8 +4,11 @@ import ProjectTitle from './ProjectTitle'
 import ProjectParagraph from './ProjectParagraph'
 
 const Tegner = () => {
+  
+  const top_styling = "w-full flex flex-col justify-start items-center mb-24 pt-[105px]"
+
   return (
-    <div className='w-full flex flex-col justify-start items-center mb-24 pt-[105px]'>
+    <div className={top_styling}>
         <ProjectImage image_name={'tegner1.png'} />
 
         <ProjectTitle date={2023}>

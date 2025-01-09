@@ -44,7 +44,7 @@ const NavBar = ({ routeObject, externalRoutes, compSetter }) => {
   }
 
   return (
-    <div className="navbar sticky top-0 z-50 flex  md:h-screen flex-row w-full md:flex-col items-center md:px-16 md:max-w-[20%] md:pt-24 bg-background shadow-sm md:shadow-none">
+    <div className="navbar sticky top-0 z-50 flex  md:h-screen flex-row w-full md:flex-col items-center pl-16 md:max-w-[15%] md:pt-24 bg-background shadow-sm md:shadow-none ">
 
       <div className='navbar-content-container flex flex-row justify-between w-full items-center p-5     md:flex-col md:p-0 '>
 
